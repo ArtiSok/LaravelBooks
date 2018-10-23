@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'CategoryController@index');
+Route::get('/category/{id}', 'CategoryController@listBooksByID')->name('listBooks')->where('id', '[0-9]+');
+Route::get('/books', 'BookController@index')->name("books.index");
+Route::get('/books/{id}','BookController@find')->where('id', '[0-9]+');
+Route::resource('authors', 'AuthorController');
+
