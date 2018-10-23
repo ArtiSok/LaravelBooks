@@ -10,8 +10,14 @@ class Category extends Model
     
     public function books()
     {
+    return$this->hasMany('App\Models\Book');
+    }
+    public function countBooksByGategory()
+    {
         return $this->books()
         ->selectRaw('category_id, count(*) as booksCount')
         ->groupBy('category_id');
     }
 }
+
+

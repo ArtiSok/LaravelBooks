@@ -16,7 +16,7 @@ public function listBooksByID($id){
 $books=\App\Models\Book::where('category_id','=',$id)->get();
 $category=\App\Models\Category::where('id','=',$id)->first();
 $categories=\App\Models\Category::all()->sortBy('name');
-returnview('main', ['books'=> $books,'category'=> $category, 
+return view('main', ['books'=> $books,'category'=> $category, 
 'categories'=>$categories]);
 }
 }
