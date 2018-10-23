@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
    <head>
-      <metacharset="utf-8">
+      <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible"content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>BooksProject</title>
@@ -23,8 +23,7 @@
                   @foreach($categories as $c)
                   <a href="{{route('listBooks', ['id' => $c->id])}}" role="button" class="bth list-group-item d-flex list-group-item-action justify-content-between align-items-center">
                   {{$c->name}}
-                  <span class="badge badge-info badge-pill text-white">
-                  {{$c->countBooksByGategory->first()->booksCount}}</span>
+                  <span class="badge badge-info badge-pill text-white">{{$c->countBooksByGategory->first()->booksCount}}</span>
                   </a>
                   @endforeach
                </div>
